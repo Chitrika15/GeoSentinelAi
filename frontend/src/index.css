@@ -1,0 +1,121 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-industrial-950 text-slate-100;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Leaflet dark theme map enhancements */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #0b0f19 !important;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+.leaflet-popup-tip {
+  background-color: #0f172a !important;
+  border: 1px solid #334155;
+}
+
+/* Custom Pulsing Markers */
+.sensor-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.marker-pin {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(0,0,0,0.8);
+  transition: transform 0.2s ease;
+}
+
+.sensor-marker:hover .marker-pin {
+  transform: scale(1.3);
+}
+
+.marker-pulse {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Risk Gradient Badges */
+.badge-low {
+  @apply bg-emerald-950/70 text-emerald-300 border border-emerald-500/30;
+}
+.badge-moderate {
+  @apply bg-amber-950/70 text-amber-300 border border-amber-500/30;
+}
+.badge-high {
+  @apply bg-orange-950/70 text-orange-300 border border-orange-500/30;
+}
+.badge-critical {
+  @apply bg-red-950/70 text-red-300 border border-red-500/40 animate-pulse;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+}
