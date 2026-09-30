@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GeoSentinel AI
 ### AI-Enabled Real-Time Mine Subsidence Monitoring, Prediction & Early Warning System
 **Smart India Hackathon (SIH) 2026**  
@@ -428,3 +429,6 @@ The software architecture is engineered for direct drop-in integration with fiel
 Developed for the **Smart India Hackathon (SIH 2026)**.  
 Department: **Coal India Limited (CIL)**.  
 Theme: **Smart Automation**.
+=======
+# GeoSentinelAi
+>>>>>>> 449340d2a4fa58edf4beb40acbcb257a10c60632
